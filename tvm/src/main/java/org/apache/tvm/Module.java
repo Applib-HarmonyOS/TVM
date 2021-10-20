@@ -133,7 +133,6 @@ public class Module extends TVMValue {
   }
 
   public static Module load(String path) {
-    LogUtil.info("Jai Hanuman!!!", path);
     return load(path, "");
   }
 

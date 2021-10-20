@@ -20,15 +20,6 @@ if(CMAKE_USE_PTHREADS_INIT)
         add_definitions(-DHAVE_PTHREADS)
 endif()
 
-#link_directories(lib/)
-#set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--export-all-symbols")
 add_library(tvm4j_runtime_packed SHARED ${jni} ${runtime} ${runtimegraph})
-#add_library(tvm4j_runtime_packed SHARED JaiHanuman.cpp)
-#configure_shared_stl("llvm-libc++" "c++_shared")
-#include(stl.cmake)
-
-#link_directories(lib/)
 
 target_link_libraries(tvm4j_runtime_packed libhilog_ndk.z.so)
-#set_target_properties(tvm_packed_runtime PROPERTIES LINK_FLAGS "-Wl,--whole-archive")
-#set_target_properties(tvm4j_runtime_packed PROPERTIES LINK_FLAGS "-Wl,--whole-archive")

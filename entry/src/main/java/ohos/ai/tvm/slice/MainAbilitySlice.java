@@ -64,7 +64,7 @@ public class MainAbilitySlice extends AbilitySlice {
             buf = new byte[(int) rawFileEntry.openRawFileDescriptor().getFileSize()];
             int bytesRead = resource.read(buf);
             if (bytesRead != buf.length) {
-                throw new IOException("Jai Hanuman!!! Asset Read failed!!!");
+                throw new IOException("Asset Read failed!!!");
             }
 
             //output = new FileOutputStream(file);
