@@ -28,6 +28,7 @@
 
 #include "library_module.h"
 
+// NOTE: We dont need to use DMLC Log stack, redirect all loggings to HMOS logging
 #ifdef DMLC_LOG_STACK_TRACE
 #undef DMLC_LOG_STACK_TRACE
 #endif
