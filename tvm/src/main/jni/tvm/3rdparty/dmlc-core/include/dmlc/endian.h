@@ -31,7 +31,6 @@
       #define DMLC_LITTLE_ENDIAN 0
     #endif
   #else
-    //#error "Unable to determine endianness of your machine; use CMake to compile"
     #include <endian.h>
     #define DMLC_LITTLE_ENDIAN (__BYTE_ORDER == __LITTLE_ENDIAN)
   #endif
