@@ -115,7 +115,10 @@ class NativeLibraryLoader {
     return unifyOSName(System.getProperty("os.name"));
   }
 
-  private static File createTempFile(String name) throws NullPointerException {
+  private static File createTempFile(String name) throws IOException {
+    if (null == name) {
+      throw new IOException("Temp file name is null!");
+    }
     return new File(tempDir + File.separator + name);
   }
 
@@ -140,6 +143,9 @@ class NativeLibraryLoader {
     File tempfile = null;
     try {
       tempfile = createTempFile(filename);
+    } catch (IOException io) {
+      LogUtil.error(TAG,"[ERROR] Could not create the temp file: " + io.toString());
+      throw io;
     } catch (NullPointerException io) {
       LogUtil.error(TAG,"[ERROR] Could not create the temp file: " + io.toString());
       throw io;
